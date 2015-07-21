@@ -20,6 +20,7 @@ void initRendering()    {
 
     //Make 3d drawing work when something is in front of something else
     glEnable(GL_DEPTH_TEST);
+    glEnable(GL_COLOR_MATERIAL); //Enable to use color
 }
 
 //Called when the window is resized
@@ -44,7 +45,7 @@ void drawing()  {
 
     //Clear information from last draw
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
+    glClearColor(0.7f, 0.9f, 1.0f, 1);
     glMatrixMode(GL_MODELVIEW); //switch to the drawing perspective
     glLoadIdentity(); //Reset the drawing perspective
     glRotatef(-cameraAngle, 0.0f, 1.0f, 0.0f); // Rotated the camera to 10 degrees
@@ -56,9 +57,13 @@ void drawing()  {
     glRotatef(angle, 0.0f, 0.0f, 1.0f);
     glBegin(GL_QUADS);
     //Trapezoid
+    glColor3f(0.5f, 0.0f, 0.8f);
     glVertex3f(-0.7f, -0.5f, 0.0f);
+    glColor3f(0.0f, 0.9f, 0.0f);
     glVertex3f(0.7f, -0.5f, 0.0f);
+    glColor3f(1.0f, 0.0f, 0.0f);
     glVertex3f(0.4f, 0.5f, 0.0f);
+    glColor3f(0.0f, 0.65f, 0.65f);
     glVertex3f(-0.4f, 0.5f, 0.0f);
     glEnd();
 
@@ -70,6 +75,7 @@ void drawing()  {
     glScalef(0.7f, 0.7f, 0.7f); //shrink the polygon to 70%
     glBegin(GL_POLYGON); //Begin triangle coordinates
     //Pentagon
+    glColor3f(0.0f, 0.75f, 0.0f);
     glVertex3f(-0.5f, -0.5f, 0.0f);
     glVertex3f(0.5f, -0.5f, 0.0f);
     glVertex3f(0.5f, 0.0f, 0.0f);
@@ -82,10 +88,14 @@ void drawing()  {
     glPushMatrix();
     glTranslatef(-1.0f, 1.0f, 0.0f);
     glRotatef(angle, 1.0f, 2.0f, 3.0f);
+    glColor3f(0.0f, 0.6f, 0.6f);
     glBegin(GL_TRIANGLES);
     //Triangle
+    glColor3f(1.0f, 0.7f, 0.0f);
     glVertex3f(0.5f, -0.5f, 0.0f);
+    glColor3f(1.0f, 1.0f, 1.0f);
     glVertex3f(0.0f, 0.5f, 0.0f);
+    glColor3f(-0.5f, 0.0f, 1.0f);
     glVertex3f(-0.5f, -0.5f, 0.0f);
     glEnd();
 
