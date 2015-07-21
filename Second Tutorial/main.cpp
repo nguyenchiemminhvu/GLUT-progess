@@ -21,6 +21,15 @@ void initRendering()    {
     //Make 3d drawing work when something is in front of something else
     glEnable(GL_DEPTH_TEST);
     glEnable(GL_COLOR_MATERIAL); //Enable to use color
+
+    /*
+    glEnable(GL_LIGHTING); // Call glDisable(GL_LIGHTING) to disable lighting
+    //Then we add two lighting source
+    glEnable(GL_LIGHT0);
+    glEnable(GL_LIGHT1);
+
+    glEnable(GL_NORMALIZE);
+    */
 }
 
 //Called when the window is resized
